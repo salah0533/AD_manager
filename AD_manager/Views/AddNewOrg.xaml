@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AD_manager.Views.AddNewOrg"
+             Title="add new organization">
+    <VerticalStackLayout
+        HorizontalOptions="CenterAndExpand"
+        Padding="20"
+        >
+        <Entry 
+            MinimumWidthRequest="200"
+            FontSize="20"
+            x:Name="entry_org"
+            Placeholder="اسم المؤسسة"
+            Margin="0,0,0,70"
+            />
+        <Entry 
+            MinimumWidthRequest="200"
+            FontSize="20"
+            x:Name="entry_wilay"
+            Placeholder="الولاية"
+            TextChanged="Entry_wilay_TextChanged"
+            />
+        <ListView x:Name="list_wilaya" HeightRequest="70">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Tapped="list_wilaya_tapped" Text="{Binding}">
+                        
+                    </TextCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Entry 
+            MinimumWidthRequest="200"
+            FontSize="20"
+            x:Name="entry_baladia"
+            Placeholder=" البلدية"
+            Margin="0,0,0,70"
+            />
+        <Entry 
+            MinimumWidthRequest="200"
+            FontSize="20"
+            x:Name="entry_address"
+            Placeholder="العنوان"
+            Margin="0,0,0,40"
+            />
+        <HorizontalStackLayout>
+            <Button 
+                x:Name="btn_submit"
+                Clicked="submit_clicked"
+                Text="اضافة"
+                Margin="20,0"
+                FontSize="20"
+                />
+            <Button
+                x:Name="btn_cancel"
+                Clicked="cancel_clicked"
+                Text="خروج"
+                Margin="20,0"
+                FontSize="20"
+                />
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

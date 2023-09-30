@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AD_manager.Views.Delivary_Page1"
+             Title="Delivary_Page1">
+    <VerticalStackLayout HorizontalOptions="CenterAndExpand" Padding="20">
+        <HorizontalStackLayout>
+            <Entry x:Name="entry_orgName"
+                       Placeholder="اسم المؤسسة"
+                       TextChanged="entry_orgName_TextChanged"
+                       FontSize="20"
+                       MinimumWidthRequest="200"
+                       HorizontalOptions="CenterAndExpand"
+                       />
+            <Button Text="+"    
+                        FontSize="20"
+                        Scale="0.6"
+                        Padding="0"
+                        Clicked="OnClick_AddNewOrg"
+                        />
+        </HorizontalStackLayout >
+        <ListView HeightRequest="50"
+                      x:Name="list_orgName">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding OrganizationName}" Tapped="onTappedlist_org"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        
+            <HorizontalStackLayout>
+                <Entry x:Name="entry_sectorName"
+                       Placeholder="اسم القطاع"
+                       TextChanged="entry_sectorName_TextChanged"
+                       FontSize="20"
+                       MinimumWidthRequest="200"
+                       HorizontalOptions="CenterAndExpand"
+                       />
+                <Button Text="+"
+                        FontSize="20"
+                        Scale="0.6"
+                        Padding="0"
+                        Clicked="OnClick_AddNewSector"
+                        />
+            </HorizontalStackLayout>
+            <ListView HeightRequest="50"
+                      x:Name="list_sectorName">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding SectorName}" Tapped="onTappedList_sector"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <DatePicker
+                FontSize="18"
+                MinimumWidthRequest="200"
+                />
+    </VerticalStackLayout>
+</ContentPage>
