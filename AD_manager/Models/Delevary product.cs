@@ -29,6 +29,9 @@ namespace AD_manager.Models
         public double prixVont { get; set; }
 
         public bool isFactured { get; set; }
-
+        public Delevary_product()
+        {
+            // Initialize any default values here if needed.
+        }
     }
 }

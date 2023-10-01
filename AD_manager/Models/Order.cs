@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AD_manager.Models
 {
-    internal class Order
+    public class Order
     {
         [PrimaryKey,Unique]
         public string OrderId { get; set; }
@@ -20,6 +20,10 @@ namespace AD_manager.Models
         
         public DateTime date { get; set; }
 
+        public Order()
+        {
+
+        }
 
     }
 }

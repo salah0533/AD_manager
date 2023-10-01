@@ -14,8 +14,14 @@ public partial class Delivary_products : ContentPage
     DataBaseManager db = new DataBaseManager();
     List<Product> listOfProducts = new List<Product>();
     List<Saller> listOfSallers = new List<Saller>();
-    
-	public Delivary_products(int orgID=-1,string orderID=null,int receverID=-1)
+
+    // Parameterless constructor
+    public Delivary_products()
+    {
+        InitializeComponent();
+        
+    }
+    public Delivary_products(int orgID=-1,string orderID=null,int receverID=-1)
 	{
 		InitializeComponent();
 

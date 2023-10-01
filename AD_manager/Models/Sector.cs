@@ -15,6 +15,7 @@ namespace AD_manager.Models
 
         [Unique]
         public string SectorName { get; set; }
-
+        public Sector() { 
+        }
     }
 }

@@ -15,5 +15,10 @@ namespace AD_manager.Models
         public int ReciverId { get; set; }
         [Unique]
         public string ReciverName { get; set; }
+
+        public Reciver()
+        {
+
+        }
     }
 }

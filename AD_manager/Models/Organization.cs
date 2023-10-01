@@ -21,5 +21,10 @@ namespace AD_manager.Models
         public string baladia { get; set; }
         [MaxLength(255)]
         public string adress { get; set; }
+
+        public Organization()
+        {
+
+        }
     }
 }

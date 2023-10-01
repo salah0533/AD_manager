@@ -19,6 +19,9 @@ namespace AD_manager.Models
         public string wilaya { get; set; }
         public string baladia { get; set; }
         public string adress { get;set; }
+        public Saller()
+        {
 
+        }
     }
 }

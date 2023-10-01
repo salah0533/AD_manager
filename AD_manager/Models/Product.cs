@@ -17,6 +17,12 @@ namespace AD_manager.Models
         public string Name { get; set; }
 
         public int sectorID { get; set; }
+
+
+        public Product()
+        {
+
+        }
     }
 }
 
