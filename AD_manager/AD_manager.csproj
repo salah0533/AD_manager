@@ -64,6 +64,9 @@
 	  <MauiXaml Update="Views\Delivary_Page1.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\Delivary_products.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Delivar_Page2.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

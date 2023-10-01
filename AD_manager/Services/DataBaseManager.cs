@@ -32,9 +32,10 @@ namespace AD_manager.Services
             this.conn.CreateTable<Organization>();
             this.conn.CreateTable<Product>();
             this.conn.CreateTable<Sector>();
+            this.conn.CreateTable<Saller>();
         }
 
-        public int AddNewProduct(string name)
+        public int AddNewProduct(string name,int SectorID)
         {
             int result = 0;
             name = name.ToLower();
@@ -48,7 +49,7 @@ namespace AD_manager.Services
                     throw new Exception("Valid name required");
 
                 // enter this line
-                result = this.conn.Insert(new Product { Name = name });
+                result = this.conn.Insert(new Product { Name = name ,sectorID =SectorID });
 
             }
             catch (Exception ex)
@@ -135,6 +136,19 @@ namespace AD_manager.Services
             return new List<Organization>();
         }
 
+        public List<Saller> GetAllSallers()
+        {
+            try
+            {
+                Init();
+                return conn.Table<Saller>().ToList();
+            }catch(Exception ex)
+            {
+                Console.WriteLine("faild to retrave sallers list {0}", ex.Message);
+            }
+            return new List<Saller>();
+
+        }
 
         public List<string> GetOrganizationName()
         {
@@ -225,5 +239,67 @@ namespace AD_manager.Services
                 return null;
             }
         }
+
+        public Product GetProductByName(string name)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(name)) return null;
+                Init();
+                name = name.ToLower();
+                Product result = conn.Table<Product>().Where(item => item.Name == name).FirstOrDefault();
+                if (result != null) return result;
+
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("faild to retraive id product {0}", ex.Message);
+            }
+
+            return null;
+        }
+        public int GetIdSallerByName(string name)
+        {
+            try
+            {
+                if(string.IsNullOrEmpty(name)) return -1;
+
+                Init();
+                name = name.ToLower();
+                Saller result = conn.Table<Saller>().Where(item => item.sallerName == name).FirstOrDefault();
+                if (result != null) return result.sallerId;
+
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("faild to retraive id saller {0}", ex.Message);
+            }
+
+            return -1;
+        }
+        public int GetIdSectorByName(string name)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(name)) return -1;
+
+                Init();
+                name = name.ToLower();
+                Sector result = conn.Table<Sector>().Where(item => item.SectorName == name).FirstOrDefault();
+                if (result != null) return result.SectorId;
+
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("faild to retraive id sector {0}", ex.Message);
+            }
+
+            return -1;
+        }
+
     }
 }
+

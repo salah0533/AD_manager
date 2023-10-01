@@ -16,7 +16,7 @@ namespace AD_manager.Models
         [MaxLength(250), Unique]
         public string Name { get; set; }
 
-
+        public int sectorID { get; set; }
     }
 }
 

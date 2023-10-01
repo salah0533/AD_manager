@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AD_manager.Views.Delivary_products"
+             Title="Delivary_products">
+    <VerticalStackLayout HorizontalOptions="CenterAndExpand">
+        <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+            <Entry
+                x:Name="entry_productName"
+                MinimumWidthRequest="200"
+                TextChanged="entry_productName_TextChanged"
+                />
+            <Button
+                x:Name="btn_AddNewProduct"
+                Scale="0.6"
+                Text="+"
+                Clicked="btn_AddNewProduct_Clicked"
+                />
+        </HorizontalStackLayout >
+        <ListView
+            x:Name="list_ProductName"
+            >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell
+                        Text="{Binding Name}"
+                        Tapped="TextCell_Tapped"
+                        />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>   
+        
+        <Entry
+            x:Name="entry_achatPrix"
+            MinimumWidthRequest="200"
+            Keyboard="Numeric"
+            />
+        <Entry
+            x:Name="entry_vontPrix"
+            MinimumWidthRequest="200"
+            Keyboard="Numeric"
+            />
+        <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+            <Entry
+            x:Name="entry_saller"
+            TextChanged="entry_saller_TextChanged"
+            MinimumWidthRequest="200"
+            />
+            <Button
+                x:Name="btn_AddNewSaller"
+                Clicked="btn_AddNewSaller_Clicked"
+                Scale="0.6"
+                Text="+"
+                />
+        </HorizontalStackLayout>
+        <ListView
+            x:Name="list_sallers"
+            >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell
+                        Text="{Binding sallerName}"
+                        Tapped="TextCell_Tapped_1"
+                        />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+            <Button
+                x:Name="submit"
+                Clicked="submit_Clicked"
+                Text="اضافة"
+                />
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

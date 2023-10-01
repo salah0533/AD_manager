@@ -9,7 +9,7 @@
 
     <ShellContent
         Title="Home"
-        ContentTemplate="{DataTemplate deliv:Delivar_Page2}"
+        ContentTemplate="{DataTemplate deliv:Delivary_products}"
         Route="MainPage" />
 
 </Shell>

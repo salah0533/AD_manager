@@ -41,21 +41,21 @@ public partial class Delivar_Page2 : ContentPage
             {
 
 
-                lastDelevaryProduct = db.GetTheLastDelivaryProductByOrganization(Organization_id,);
+                /*lastDelevaryProduct = db.GetTheLastDelivaryProductByOrganization(Organization_id,);
                 entry_achat.Text = lastDelevaryProduct.PrixAchat.ToString();
-                entry_vont.Text = lastDelevaryProduct.prixVont.ToString();
+                entry_vont.Text = lastDelevaryProduct.prixVont.ToString();*/
             }
         };
 
 
     }
 
-    private void list_product_tapped(object sender, ItemTappedEventArgs e)
+    /*private void list_product_tapped(object sender, ItemTappedEventArgs e)
     {
         int index = e.ItemIndex;
         this.currecnt_product_id =  listOfProduct[index].Id;
         entry_productName.Text = listOfProduct[index].Name;
-    }
+    }*/
 
     private void enry_productName_textChange(object sender, TextChangedEventArgs e)
     {

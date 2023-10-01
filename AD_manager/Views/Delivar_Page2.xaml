@@ -19,10 +19,10 @@
                 <DataTemplate>
                     <TextCell
                         Text="{Binding Name}"
-                        Tapped="list_product_tapped"
-                        >
                         
-                    </TextCell>
+                        />
+
+
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

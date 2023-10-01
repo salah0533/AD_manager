@@ -9,7 +9,7 @@ namespace AD_manager.Models
 
 {
     [Table("Saller")]
-    internal class Saller
+    public class Saller
     {
         [PrimaryKey,AutoIncrement]
         public int sallerId {  get; set; }
